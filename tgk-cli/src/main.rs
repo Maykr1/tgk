@@ -1,13 +1,13 @@
 //! TGK CLI & Orchestrator
-//! 
+//!
 //! This module serves as the entry point for the The Greatest Knight. It
 //! handles CLI argument parsing using [`clap`].
 
 use clap::{Parser, Subcommand};
 
 /// Top-level CLI argument structure
-/// 
-/// This struct represents the CLI command tree. It is parsed using 
+///
+/// This struct represents the CLI command tree. It is parsed using
 /// [`clap::Parser`] and contains the selected subcommands.
 #[derive(Parser)]
 #[command(name = "tgk", version, about = "The Greatest Knight")]
@@ -17,7 +17,7 @@ pub struct Cli {
 }
 
 /// Available CLI subcommands.
-/// 
+///
 /// Each variant corresponds to a distinct execution path within The Greatest Knight.
 #[derive(Subcommand)]
 enum Commands {
@@ -30,7 +30,7 @@ enum Commands {
         #[arg(long, default_value = "low")]
         severity: String,
     },
-    
+
     /// List current findings
     Findings {
         /// Filter by severity
@@ -57,7 +57,7 @@ enum Commands {
         /// Audit interval (e.g. 7d, 24h)
         #[arg(long, default_value = "7d")]
         interval: String,
-    }
+    },
 }
 
 fn main() {
