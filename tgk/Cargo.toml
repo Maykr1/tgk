@@ -1,0 +1,8 @@
+[package]
+name = "tgk"
+description = "The Greatest Knight (TGK) - a local personal data exposure auditor"
+version = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
+
+[dependencies]
